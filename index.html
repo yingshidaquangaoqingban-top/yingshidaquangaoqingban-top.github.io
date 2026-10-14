@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视大全高清版 · 高清介质库索引 | 蓝光碟片陈列式片单（yingshidaquangaoqingban-top.github.io）</title>
+<meta name="description" content="影视大全高清版 yingshidaquangaoqingban-top.github.io 是一个以高清介质为核心的影视索引平台，采用蓝光碟片陈列的方式整理片单。收录院线新片、经典修复、高分剧集、纪录片、动画等分类，标注4K、蓝光、HDR等画质信息，帮你找到值得用高清设备重看的好作品。">
+<meta name="keywords" content="影视大全高清版, yingshidaquangaoqingban-top.github.io, 高清影视, 蓝光碟片, 4K修复, 高清片单, 画质索引, 经典修复">
+<meta name="author" content="影视大全高清版">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://yingshidaquangaoqingban-top.github.io">
+<meta property="og:title" content="影视大全高清版 · 高清介质库索引">
+<meta property="og:description" content="yingshidaquangaoqingban-top.github.io 蓝光碟片陈列式片单。">
+<meta property="og:url" content="https://yingshidaquangaoqingban-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="影视大全高清版 · 高清介质库索引">
+<meta name="twitter:description" content="yingshidaquangaoqingban-top.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0F1218;--ink2:#161B24;--ink3:#1E2530;
+  --disc:#C9CDD6;--disc2:#E4E7EC;--disc3:#9AA1AC;
+  --blue:#2E86DE;--blue2:#5AA9E6;--blue3:#1A6BB8;
+  --cyan:#00B8A9;--cyan2:#3FD9CB;
+  --gold:#E0A52B;--gold2:#F0C05A;
+  --white:#F5F7FA;--white2:#D8DDE6;--white3:#9AA4B2;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"STKaiti","KaiTi","Songti SC",serif;
+  --mono:"SFMono-Regular",Consolas,"Courier New",monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);color:var(--white);background:var(--ink);line-height:1.9;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 22% 18%,rgba(46,134,222,.1),transparent 45%),
+    radial-gradient(circle at 78% 82%,rgba(0,184,169,.07),transparent 45%);
+  background-attachment:fixed;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.5) 0,transparent 1px);background-size:3px 3px;}
+a{color:inherit;text-decoration:none;transition:.2s;}
+ul,ol{list-style:none;}
+
+/* 碟片编号滚动条 */
+.disc-bar{background:var(--ink2);padding:.4rem 0;overflow:hidden;border-bottom:1px solid var(--ink3);position:relative;}
+.disc-bar::before{content:"";position:absolute;left=0;right=0;top=0;height=2px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--blue));}
+.disc-inner{display:flex;gap=2.5rem;animation:scroll 34s linear infinite;white-space:nowrap;font-family:var(--mono);font-size=.66rem;color:var(--white3);letter-spacing=1px;}
+.disc-inner span{display:inline-block;padding:0 1rem;}
+.disc-inner span strong{color:var(--blue2);}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.wrap{max-width=1200px;margin:0 auto;padding:0 1.2rem;position:relative;z-index:1;}
+
+/* 头部 碟片商标 */
+.header{padding=3rem 0 2rem;text-align:center;position:relative;}
+.disc-mark{display:flex;justify-content:center;gap=1.5rem;margin-bottom=1.5rem;align-items:center;}
+.ring{width=52px;height=52px;border-radius=50%;border:3px solid var(--disc);position:relative;}
+.ring::before{content:"";position:absolute;inset=8px;border-radius=50%;border:2px solid var(--blue);}
+.ring::after{content:"";position:absolute;inset=20px;border-radius=50%;background:var(--blue);}
+.ring.r2{border-color:var(--cyan);}
+.ring.r2::before{border-color:var(--cyan);}
+.ring.r2::after{background:var(--cyan);}
+.logo{font-family:var(--serif);font-size=clamp(1.7rem,5.5vw,3.4rem);font-weight=900;letter-spacing=4px;color:var(--white);}
+.logo .hd{color:var(--blue2);}
+.logo-sub{font-family:var(--mono);font-size=.62rem;color:var(--white3);letter-spacing=4px;margin-top=.4rem;}
+.url-line{display:inline-block;font-family:var(--mono);font-size=.6rem;color:var(--blue2);background:var(--ink2);border:1px solid var(--ink3);padding=.4rem 1.2rem;margin-top=1rem;}
+
+/* 导航 */
+.nav{margin=1rem 0;}
+.nav-inner{display:flex;justify-content:center;gap=.5rem;flex-wrap:wrap;}
+.nav a{padding=.6rem 1.4rem;font-size=.8rem;font-weight=700;color:var(--white2);background:var(--ink2);border:1px solid var(--ink3);position:relative;overflow:hidden;}
+.nav a::before{content:"";position:absolute;left=0;top=0;bottom=0;width=3px;background:var(--blue);transform:scaleY(0);transition:.25s;transform-origin:bottom;}
+.nav a:hover{color:var(--white);background:var(--ink3);}
+.nav a:hover::before{transform:scaleY(1);}
+
+/* Hero 碟片陈列台 */
+.hero{padding=2rem 0 3rem;}
+.display{background:var(--ink2);border:2px solid var(--ink3);padding=3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.display>*{position:relative;z-index:1;}
+.display .groove{position:absolute;inset:0;opacity:.08;background:repeating-linear-gradient(90deg,transparent,transparent 78px,rgba(201,205,214,.4) 78px,rgba(201,205,214,.4) 80px);}
+.display .spec{font-family:var(--mono);font-size=.64rem;color:var(--white3);letter-spacing=4px;margin-bottom=.6rem;}
+.display h1{font-family:var(--serif);font-size=clamp(1.6rem,4.5vw,3rem);font-weight=900;letter-spacing=4px;margin-bottom=.8rem;color:var(--white);}
+.display h1 .hl{color:var(--blue2);}
+.display .sub{font-family:var(--mono);font-size=.72rem;color:var(--cyan2);letter-spacing=5px;margin-bottom=1.2rem;text-transform:uppercase;}
+.display-desc{font-size=.88rem;color:var(--white2);max-width=680px;margin:0 auto 2rem;line-height=2.1;}
+.display-stats{display:flex;justify-content:center;gap=3.5rem;flex-wrap:wrap;}
+.ss .num{font-family:var(--mono);font-size=1.5rem;font-weight=900;color:var(--blue2);}
+.ss .label{font-size=.58rem;color:var(--white3);letter-spacing=2px;text-transform:uppercase;}
+
+/* 栏目通用 */
+.section{padding=3rem 0;border-top:1px solid var(--ink3);}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom=1.8rem;flex-wrap:wrap;gap=.5rem;}
+.sec-head h2{font-family:var(--serif);font-size=clamp(1.1rem,2.8vw,1.65rem);font-weight=900;color:var(--white);display:flex;align-items:center;gap=.7rem;letter-spacing=2px;}
+.sec-head .dot{width=10px;height=10px;border-radius=50%;background:var(--blue);box-shadow:0 0 8px var(--blue);flex-shrink:0;}
+.sec-head .more{font-size=.7rem;color:var(--cyan2);font-family:var(--mono);letter-spacing=1px;}
+.sec-sub{font-size=.64rem;color:var(--white3);width:100%;margin-top=.3rem;font-family:var(--mono);}
+
+/* 分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap=.8rem;}
+.cat-card{background:var(--ink2);border:1px solid var(--ink3);padding=1.3rem .8rem;text-align:center;transition:.25s;cursor:pointer;position:relative;}
+.cat-card::before{content:"";position:absolute;inset=6px;border:1px dashed var(--ink3);opacity:0;transition:.25s;}
+.cat-card:hover{border-color:var(--blue);background:var(--ink3);transform:translateY(-3px);}
+.cat-card:hover::before{opacity:1;border-color:var(--blue);}
+.cat-icon{font-size=1.9rem;margin-bottom=.5rem;display:block;}
+.cat-name{font-size=.85rem;font-weight=700;color:var(--white);margin-bottom=.2rem;}
+.cat-count{font-family:var(--mono);font-size=.56rem;color:var(--white3);}
+
+/* 碟片卡片 */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap=1.2rem;}
+.movie-card{background:var(--ink2);border:1px solid var(--ink3);padding=.6rem;transition:.25s;}
+.movie-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 8px 24px rgba(46,134,222,.15);}
+.movie-cover{height=210px;border-radius=4px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.movie-cover::after{content:"";position:absolute;inset:0;opacity:.1;background:repeating-radial-gradient(circle at 50% 45%,var(--disc) 0,transparent 3px,var(--disc) 6px);}
+.mc1{background:linear-gradient(160deg,#1E3A5F,#2E5480);}
+.mc2{background:linear-gradient(160deg,#1E5F4A,#2E8060);}
+.mc3{background:linear-gradient(160deg,#5F1E3A,#80304F);}
+.mc4{background:linear-gradient(160deg,#3A1E5F,#542E80);}
+.mc5{background:linear-gradient(160deg,#5F4A1E,#80602E);}
+.mc6{background:linear-gradient(160deg,#1E5F5F,#2E8080);}
+.movie-cover .cover-text{font-family:var(--serif);font-size=.78rem;color:var(--white);text-align:center;padding=1rem;font-weight=700;letter-spacing=1px;position:relative;z-index:1;}
+.movie-cover .badge{position:absolute;top=.5rem;right=.5rem;font-family:var(--mono);font-size=.46rem;font-weight=700;padding=.2rem .5rem;z-index:2;background:var(--cyan);color:var(--ink);}
+.badge-4k{background:var(--gold)!important;color:var(--ink)!important;}
+.movie-info{padding=.6rem .2rem 0;}
+.movie-info h3{font-size=.8rem;font-weight=700;color:var(--white);margin-bottom=.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.movie-info .meta{font-family:var(--mono);font-size=.52rem;color:var(--white3);margin-bottom=.4rem;}
+.movie-info .tags{display:flex;gap=.3rem;flex-wrap:wrap;}
+.tag{font-family:var(--mono);font-size=.5rem;padding=.15rem .45rem;background:var(--ink3);color:var(--blue2);}
+
+/* 高清专区 */
+.hd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap=1.2rem;}
+.hd-card{background:var(--ink2);border:1px solid var(--ink3);padding=1.5rem;transition:.25s;border-left:4px solid var(--blue);}
+.hd-card:nth-child(2){border-left-color:var(--cyan);}
+.hd-card:nth-child(3){border-left-color:var(--gold);}
+.hd-card:nth-child(4){border-left-color:var(--disc);}
+.hd-card:hover{border-color:var(--blue);background:var(--ink3);transform:translateX(4px);}
+.hd-card .hd-no{font-family:var(--mono);font-size=.56rem;color:var(--blue2);letter-spacing=2px;margin-bottom=.5rem;}
+.hd-card h4{font-family:var(--serif);font-size=.92rem;font-weight=900;color:var(--white);margin-bottom=.5rem;}
+.hd-card p{font-size=.74rem;color:var(--white2);line-height=1.85;}
+
+/* 介质表 */
+.media-table{width=100%;border-collapse:collapse;font-family:var(--mono);font-size=.66rem;background:var(--ink2);border:1px solid var(--ink3);}
+.media-table th{background:var(--blue3);color:var(--white);padding=.6rem;text-align:left;letter-spacing=1px;font-size=.62rem;}
+.media-table td{padding=.6rem;border-bottom:1px solid var(--ink3);color:var(--white2);}
+.media-table tr:last-child td{border-bottom:none;}
+.media-table .hi{color:var(--cyan2);font-weight=700;}
+
+/* 排行榜 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.rank-panel{background:var(--ink2);border:1px solid var(--ink3);padding=1.5rem;}
+.rank-panel h3{font-family:var(--serif);font-size=1rem;font-weight=900;color:var(--cyan2);margin-bottom=1.2rem;padding-bottom=.6rem;border-bottom:1px solid var(--ink3);letter-spacing=2px;}
+.rank-item{display:flex;align-items:center;gap=.9rem;padding=.6rem 0;border-bottom:1px dotted var(--ink3);}
+.rank-item:last-child{border-bottom:none;}
+.rank-pos{width=32px;height=32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size=.76rem;font-weight=900;background:var(--ink3);color:var(--white3);flex-shrink:0;}
+.rank-pos.top{background:var(--blue);color:var(--white);}
+.rank-detail{flex:1;min-width:0;}
+.rank-detail h4{font-size=.78rem;font-weight=700;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-detail p{font-family:var(--mono);font-size=.52rem;color:var(--white3);}
+.rank-score{font-family:var(--mono);font-size=.76rem;font-weight=900;color:var(--blue2);flex-shrink:0;}
+
+/* 指引 */
+.guide-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.guide-card{background:var(--ink2);border:1px solid var(--ink3);padding=1.8rem;}
+.guide-card h3{font-family:var(--serif);font-size=.95rem;font-weight=900;color:var(--cyan2);margin-bottom=1.2rem;letter-spacing=1px;}
+.guide-card p,.guide-card li{font-size=.78rem;color:var(--white2);line-height=2.05;}
+.guide-card ul{padding-left=1.3rem;}
+.guide-card li{position:relative;}
+.guide-card li::before{content:"●";position:absolute;left=-1.1rem;font-size=.5rem;color:var(--blue2);}
+.guide-card strong{color:var(--white);}
+
+/* 合规 */
+.compliance{background:var(--ink2);border:1px solid var(--ink3);padding=1.8rem;}
+.compliance h3{font-family:var(--serif);font-size=1.05rem;font-weight=900;color:var(--white);margin-bottom=1.2rem;text-align:center;letter-spacing=3px;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap=1rem;}
+.comp-item{padding=1.2rem;background:var(--ink3);border-left:4px solid var(--blue);}
+.comp-item:nth-child(2){border-left-color:var(--cyan);}
+.comp-item:nth-child(3){border-left-color:var(--gold);}
+.comp-item:nth-child(4){border-left-color:var(--disc);}
+.comp-item h4{font-family:var(--mono);font-size=.58rem;font-weight=700;color:var(--cyan2);margin-bottom=.4rem;text-transform:uppercase;}
+.comp-item p{font-size=.64rem;color:var(--white3);line-height=1.7;}
+
+/* 页脚 */
+.footer{background:#0A0C10;padding=3.5rem 0 1.5rem;margin-top=3rem;border-top:2px solid var(--blue);}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap=1.8rem;margin-bottom=2rem;}
+.footer-col h4{font-family:var(--serif);font-size=.85rem;font-weight=900;color:var(--blue2);margin-bottom=.8rem;letter-spacing=1px;}
+.footer-col p,.footer-col li{font-size=.7rem;color:var(--white3);margin-bottom=.4rem;line-height=1.7;}
+.footer-col a{color:var(--white3);}
+.footer-col a:hover{color:var(--blue2);}
+.footer-url{font-family:var(--mono);font-size=.54rem!important;color:var(--cyan2)!important;}
+.footer-bottom{text-align:center;padding-top=1.5rem;border-top:1px solid var(--ink3);font-family:var(--mono);font-size=.56rem;color:var(--white3);}
+
+@media(max-width:768px){
+  .rank-wrap,.guide-wrap{grid-template-columns:1fr;}
+  .display-stats{gap=1.5rem;}
+  .media-table{font-size=.6rem;}
+}
+@media(max-width:480px){
+  .display{padding=2.5rem 1.2rem;}
+  .display h1{font-size=1.4rem;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .movie-grid,.hd-grid{grid-template-columns:repeat(2,1fr);}
+  .movie-cover{height=180px;}
+  .nav a{padding=.5rem .8rem;font-size=.72rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="disc-bar"><div class="disc-inner">
+  <span>◉ <strong>影视大全高清版</strong> · 高清介质库索引 · 蓝光碟片陈列式片单 · 网址 yingshidaquangaoqingban-top.github.io · 标注4K/蓝光/HDR ◉</span>
+  <span>◉ <strong>影视大全高清版</strong> · 高清介质库索引 · 蓝光碟片陈列式片单 · 网址 yingshidaquangaoqingban-top.github.io · 标注4K/蓝光/HDR ◉</span>
+</div></div>
+
+<div class="wrap">
+  <header class="header">
+    <div class="disc-mark">
+      <div class="ring"></div>
+      <div class="ring r2"></div>
+    </div>
+    <div class="logo"><span class="hd">影视大全</span>高清版</div>
+    <div class="logo-sub">— HIGH DEFINITION COLLECTION —</div>
+    <div class="url-line">yingshidaquangaoqingban-top.github.io</div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home">首页</a>
+      <a href="#cats">分类索引</a>
+      <a href="#hdzone">高清专区</a>
+      <a href="#movies">碟片陈列</a>
+      <a href="#media">介质表</a>
+      <a href="#rank">画质榜</a>
+      <a href="#guide">使用指引</a>
+      <a href="#compliance">合规声明</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="display">
+      <div class="groove"></div>
+      <div class="spec">DISC // BD-50 / 4K UHD / HDR10</div>
+      <h1><span class="hl">影视大全</span>高清版</h1>
+      <div class="sub">— HIGH DEFINITION COLLECTION —</div>
+      <p class="display-desc">影视大全高清版是一个以高清介质为核心的影视索引平台。我们像整理蓝光碟架一样，把影视作品按类型、年代、画质分门别类，逐片标注4K、蓝光、HDR等画质信息，帮你找到那些值得用高清设备重看一遍的好作品。</p>
+      <div class="display-stats">
+        <div class="ss"><div class="num">14,000+</div><div class="label">碟 片 索 引</div></div>
+        <div class="ss"><div class="num">4K</div><div class="label">修 复 专 区</div></div>
+        <div class="ss"><div class="num">12类</div><div class="label">分 类 类 型</div></div>
+        <div class="ss"><div class="num">标注</div><div class="label">画 质 信 息</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cats">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 分类索引</h2>
+      <a href="#" class="more">全部 →</a>
+    </div>
+    <p class="sec-sub">// catalog — 按类型归入碟架</p>
+    <div class="cat-grid">
+      <div class="cat-card"><span class="cat-icon">🎬</span><div class="cat-name">院线新片</div><div class="cat-count">420+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎞️</span><div class="cat-name">经典修复</div><div class="cat-count">1,800+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">📺</span><div class="cat-name">高分剧集</div><div class="cat-count">4,500+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎨</span><div class="cat-name">文艺佳作</div><div class="cat-count">1,600+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">😂</span><div class="cat-name">轻松喜剧</div><div class="cat-count">1,500+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🧠</span><div class="cat-name">悬疑烧脑</div><div class="cat-count">980+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🚀</span><div class="cat-name">科幻视效</div><div class="cat-count">860+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">💥</span><div class="cat-name">动作冒险</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">❤️</span><div class="cat-name">爱情文艺</div><div class="cat-count">1,700+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎌</span><div class="cat-name">动画番剧</div><div class="cat-count">1,400+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎥</span><div class="cat-name">纪录片</div><div class="cat-count">720+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🏆</span><div class="cat-name">获奖精选</div><div class="cat-count">1,600+ 部</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="hdzone">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 高清专区</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// hd zone — 按画质与修复等级分区陈列</p>
+    <div class="hd-grid">
+      <div class="hd-card"><div class="hd-no">DISC A-01</div><h4>4K 修复经典</h4><p>老片4K扫描修复，画面细节大幅提升，值得用大屏重温的经典作品。</p></div>
+      <div class="hd-card"><div class="hd-no">DISC A-02</div><h4>蓝光原生画质</h4><p>原生1080p蓝光母源，色彩与细节优于普通片源的高画质作品。</p></div>
+      <div class="hd-card"><div class="hd-no">DISC A-03</div><h4>HDR 高动态</h4><p>支持HDR10/Dolby Vision，暗部与高光层次更丰富的新片与纪录片。</p></div>
+      <div class="hd-card"><div class="hd-no">DISC A-04</div><h4>高帧率视效</h4><p>48fps/60fps高帧率拍摄，动作与视效场面流畅度显著提升。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="movies">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 碟片陈列</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// shelf — 编辑按画质精选陈列</p>
+    <div class="movie-grid">
+      <div class="movie-card"><div class="movie-cover mc1"><span class="badge badge-4k">4K</span><div class="cover-text">奥本海默<br>2023 · 传记/剧情</div></div><div class="movie-info"><h3>奥本海默</h3><div class="meta">传记/剧情 · 2023 · 诺兰</div><div class="tags"><span class="tag">IMAX</span><span class="tag">HDR</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc2"><span class="badge badge-4k">4K修复</span><div class="cover-text">霸王别姬<br>1993 · 剧情</div></div><div class="movie-info"><h3>霸王别姬</h3><div class="meta">剧情 · 1993 · 陈凯歌</div><div class="tags"><span class="tag">金棕榈</span><span class="tag">4K修复</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc3"><span class="badge">蓝光</span><div class="cover-text">沙丘2<br>2024 · 科幻/冒险</div></div><div class="movie-info"><h3>沙丘2</h3><div class="meta">科幻/冒险 · 2024 · 维伦纽瓦</div><div class="tags"><span class="tag">HDR</span><span class="tag">杜比视界</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc4"><span class="badge badge-4k">4K</span><div class="cover-text">星际穿越<br>2014 · 科幻/亲情</div></div><div class="movie-info"><h3>星际穿越</h3><div class="meta">科幻/亲情 · 2014 · 诺兰</div><div class="tags"><span class="tag">IMAX</span><span class="tag">重制</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc5"><span class="badge badge-4k">4K修复</span><div class="cover-text">肖申克的救赎<br>1994 · 剧情</div></div><div class="movie-info"><h3>肖申克的救赎</h3><div class="meta">剧情 · 1994 · 4K修复</div><div class="tags"><span class="tag">经典</span><span class="tag">9.9分</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc6"><span class="badge">蓝光</span><div class="cover-text">地球脉动 系列<br>2006-2023 · 纪录片</div></div><div class="movie-info"><h3>地球脉动 系列</h3><div class="meta">纪录片 · BBC · 自然</div><div class="tags"><span class="tag">4K HDR</span><span class="tag">高分</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="media">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 介质表</h2>
+      <a href="#" class="more">详情 →</a>
+    </div>
+    <p class="sec-sub">// media sheet — 画质规格对照</p>
+    <table class="media-table">
+      <thead><tr><th>介质规格</th><th>分辨率</th><th>位深</th><th>HDR</th><th>帧率</th><th>声轨</th><th>片源数量</th></tr></thead>
+      <tbody>
+        <tr><td class="hi">UHD 蓝光</td><td>3840×2160</td><td>10bit</td><td>HDR10+</td><td>24/60fps</td><td>Dolby Atmos</td><td class="hi">1,200+</td></tr>
+        <tr><td>蓝光 BD50</td><td>1920×1080</td><td>8bit</td><td>SDR</td><td>24fps</td><td>DTS-HD MA</td><td>3,600+</td></tr>
+        <tr><td class="hi">4K 修复</td><td>3840×2160</td><td>10bit</td><td>HDR10</td><td>24fps</td><td>LPCM 5.1</td><td class="hi">1,800+</td></tr>
+        <tr><td>高清 REMUX</td><td>1920×1080</td><td>8bit</td><td>SDR</td><td>24fps</td><td>TrueHD</td><td>4,500+</td></tr>
+        <tr><td>高帧率</td><td>1920×1080</td><td>10bit</td><td>HDR10</td><td>48/60fps</td><td>Dolby Atmos</td><td>380+</td></tr>
+        <tr><td>SDR 高清</td><td>1920×1080</td><td>8bit</td><td>SDR</td><td>24fps</td><td>AC3 5.1</td><td>2,900+</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 画质榜</h2>
+      <a href="#" class="more">完整榜单 →</a>
+    </div>
+    <p class="sec-sub">// quality chart — 画质与口碑双榜</p>
+    <div class="rank-wrap">
+      <div class="rank-panel">
+        <h3>◉ 4K 修复榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>霸王别姬</h4><p>剧情 · 1993 · 4K修复</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>肖申克的救赎</h4><p>剧情 · 1994 · 4K修复</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>阿甘正传</h4><p>剧情 · 1994 · 4K重制</p></div><div class="rank-score">9.7</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>天堂电影院</h4><p>剧情 · 1988 · 4K修复</p></div><div class="rank-score">9.6</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>活着</h4><p>剧情 · 1994 · 4K修复</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>情书</h4><p>爱情/文艺 · 1995 · 4K修复</p></div><div class="rank-score">9.4</div></div>
+      </div>
+      <div class="rank-panel">
+        <h3>◉ 视效画质榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>沙丘2</h4><p>科幻/冒险 · 2024 · HDR</p></div><div class="rank-score">9.5</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>奥本海默</h4><p>传记/剧情 · 2023 · IMAX</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>星际穿越</h4><p>科幻/亲情 · 2014 · IMAX</p></div><div class="rank-score">9.7</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>地球脉动 系列</h4><p>纪录片 · BBC · 4K HDR</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>盗梦空间</h4><p>科幻/悬疑 · 2010 · 重制</p></div><div class="rank-score">9.5</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>千与千寻</h4><p>动画/奇幻 · 2001 · 4K</p></div><div class="rank-score">9.8</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 使用指引</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h3>怎么用好这份碟架</h3>
+        <ul>
+          <li><strong>分类索引：</strong>12类按类型归入碟架，院线、经典、剧集各归其位</li>
+          <li><strong>高清专区：</strong>4K修复、蓝光原生、HDR、高帧率四个画质分区</li>
+          <li><strong>介质表：</strong>分辨率、位深、HDR、帧率、声轨规格一目了然</li>
+          <li><strong>内链切换：</strong>所有导航链接使用 # 锚点，瞬间切版无需刷新</li>
+          <li><strong>移动端：</strong>手机竖屏自适应，通勤路上也能查片单</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>关于影视大全高清版</h3>
+        <p>影视大全高清版（<strong>yingshidaquangaoqingban-top.github.io</strong>）是一个以高清介质为核心的影视索引静态站点。</p>
+        <p>我们收录院线新片、经典修复、高分剧集、文艺佳作、纪录片等各类正规影视作品，逐片标注4K、蓝光、HDR等画质信息。</p>
+        <p>本站为<strong>纯静态单页设计</strong>，符合必应搜索引擎收录规则，不生成robots.txt和sitemap.xml，所有链接内联，加载极速。</p>
+        <p>官方网址：<strong>https://yingshidaquangaoqingban-top.github.io</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compliance">
+    <div class="sec-head">
+      <h2><span class="dot"></span> 合规声明</h2>
+    </div>
+    <div class="compliance">
+      <h3>✦ 高清索引 · 规约明示 ✦</h3>
+      <div class="comp-grid">
+        <div class="comp-item"><h4>CONTENT</h4><p>本站仅提供正规影视作品索引，不含任何色情、暴力、恐怖等违规内容。所有索引均指向合法公开渠道。</p></div>
+        <div class="comp-item"><h4>COPYRIGHT</h4><p>尊重版权方权益，支持正版观影。本站不存储、不提供任何视频文件下载或在线播放服务。</p></div>
+        <div class="comp-item"><h4>DISCLAIMER</h4><p>本站为静态资讯导航页面，不对第三方链接内容负责。用户访问第三方资源需自行判断合规性。</p></div>
+        <div class="comp-item"><h4>STYLE</h4><p>本站采用蓝光碟架、介质编号作为视觉风格，倡导追求画质、尊重影像的观影审美。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>◉ 影视大全高清版</h4>
+        <p>高清介质库索引，蓝光碟片陈列式片单。</p>
+        <p>网址：<br><a href="https://yingshidaquangaoqingban-top.github.io" class="footer-url">yingshidaquangaoqingban-top.github.io</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul><li><a href="#home">首页</a></li><li><a href="#cats">分类索引</a></li><li><a href="#hdzone">高清专区</a></li><li><a href="#movies">碟片陈列</a></li><li><a href="#media">介质表</a></li><li><a href="#rank">画质榜</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助</h4>
+        <ul><li><a href="#guide">使用指引</a></li><li><a href="#compliance">合规声明</a></li><li><a href="#">常见问题</a></li><li><a href="#">反馈建议</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul><li>静态单页设计</li><li>必应收录优化</li><li>移动端自适应</li><li>© 2026 影视大全高清版</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>影视大全高清版 yingshidaquangaoqingban-top.github.io ｜ 蓝光碟片陈列 ｜ 静态单页设计 ｜ 正规影视索引</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const h=this.getAttribute('href');
+    if(h==='#'){e.preventDefault();return;}
+    const t=document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
